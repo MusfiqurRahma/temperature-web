@@ -3,13 +3,11 @@ const errorDiv =document.getElementById('error')
 const API_KEY = `50bd898e6b98c2760e5aaba39d2a2abd`;
 const searchTemperature = () => {
     const city = document.getElementById('city-name');
-    
     showDetails.textContent = '';
-    
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&appid=${API_KEY}&units=metric`;
     if (city.value === '') {
         errorDiv.innerHTML = `
-        <h1 >Pls give a valid Name</h1>
+        <h6>Pls give a valid Name</h6>
         `
     } else {
         fetch(url)
@@ -31,7 +29,7 @@ const searchTemperature = () => {
 //     imgIcon.setAttribute('src', url);
 // }
 const displayTemperature = temperature => {
-    if (temperature.cod === '404') {
+    if (temperature.cod === 404) {
         errorDiv.innerHTML = `
         <h3>No Matching found</h3>
         `
