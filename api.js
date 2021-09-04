@@ -7,7 +7,7 @@ const searchTemperature = () => {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&appid=${API_KEY}&units=metric`;
     if (city.value === '') {
         errorDiv.innerHTML = `
-        <h6>Pls give a valid Name</h6>
+        <h3 class='error'>Pls give a valid Name</h3>
         `
     } else {
         fetch(url)
@@ -29,9 +29,10 @@ const searchTemperature = () => {
 //     imgIcon.setAttribute('src', url);
 // }
 const displayTemperature = temperature => {
-    if (temperature.cod === 404) {
+    errorDiv.textContent = '';
+    if (temperature.cod === '404') {
         errorDiv.innerHTML = `
-        <h3>No Matching found</h3>
+        <h3 class='err'>No Matching found</h3>
         `
     } else {
         const div = document.createElement('div')
