@@ -1,6 +1,5 @@
 const showDetails = document.getElementById('show-details')
 const errorDiv =document.getElementById('error')
-// const API_KEY = `50bd898e6b98c2760e5aaba39d2a2abd`;
 const searchTemperature = () => {
     const city = document.getElementById('city-name');
     showDetails.textContent = '';
