@@ -3,7 +3,6 @@ const errorDiv =document.getElementById('error')
 const searchTemperature = () => {
     const city = document.getElementById('city-name');
     showDetails.textContent = '';
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&appid=${API_KEY}&units=metric`;
     if (city.value === '') {
         errorDiv.innerHTML = `
         <h3 class='error'>Pls give a valid Name</h3>
